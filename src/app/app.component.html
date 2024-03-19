@@ -1,0 +1,39 @@
+<div class="app-container">
+  <div class="navbar">
+   
+    <div class="navleft">
+      <a routerLink="/apply" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Appliy Job</a>
+      <a href="http://localhost:57050/">Query Help</a>
+      <a routerLink="/jobs" routerLinkActive="active">Home</a>
+      <a routerLink="/dashboard" routerLinkActive="active">Company</a>
+    </div>
+    <div class="navRight">
+      <a routerLink="register" routerLinkActive="active" *ngIf="!authservice.isLoggeIn()" >SIGN UP</a>
+      <a routerLink="login" routerLinkActive="active" *ngIf="!authservice.isLoggeIn()"  >LOGIN</a>
+      <a routerLink="" routerLinkActive="active"  *ngIf="authservice.isLoggeIn()" (click)="authservice.logOut()" >Logout</a>
+      <a routerLink="/profile" routerLinkActive="active" class="profile-link">
+        <img src="https://secure.gravatar.com/avatar/b9a6a966ae54d4c1c74655210aa820f4?s=35&d=mm" alt="Username" class="profile-icon">
+      </a>
+      <p *ngIf="authservice.isLoggeIn()" >{{authservice.getUserName()}}</p>
+
+    </div>
+
+  </div>
+  
+  <div class="main-image">
+    <div class="search-container">
+      <input type="text" placeholder="Search Company/Job..." class="search-input"/>
+      <button class="search-button">🔍</button> 
+    </div>
+    <img src="https://masomo.mut.ac.ke/pluginfile.php/1/theme_academi/slide1image/1708609573/maya-maceka-yW-Qgw_IJXg-unsplash.jpg" alt="Descriptive Text">
+  </div>
+  
+  
+
+  <router-outlet></router-outlet>
+  
+
+
+
+  <app-footer></app-footer>
+</div>

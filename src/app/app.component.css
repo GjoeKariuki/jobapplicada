@@ -1,0 +1,109 @@
+/* src/app/app.component.css */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 60px;
+    /* background-image: ; */
+}
+
+.navbar {
+    background-color: blue;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box; 
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
+.app-container {
+    overflow-x: hidden; 
+}
+
+.navleft, .navRight {
+    display: flex;
+    gap: 2rem;
+    color: white;
+}
+
+.navRight a, .navleft a {
+    color: white;
+    text-decoration: none;
+}
+
+.active {
+    color: black;
+    font-weight: bolder;
+}
+
+.main-image img {
+    width: 100%; 
+    height: 40vh; 
+    display: block;
+   
+}
+
+
+.search-container {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex; /* This will align the button next to the input */
+    align-items: center; /* Align items vertically */
+  }
+  
+  .search-input {
+    padding: 10px;
+    width: 280px; /* Adjusted width to accommodate button */
+    border-radius: 20px 0 0 20px; /* Rounded corners on the left side */
+    border: 1px solid #ddd;
+    font-size: 16px;
+    outline: none;
+    border-right: none; /* Remove right border */
+  }
+  
+  .search-button {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    background-color: blue; /* Match the input field */
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0; /* Rounded corners on the right side */
+    outline: none;
+  }
+  
+  .search-button:hover {
+    background-color: #f0f0f0; /* Light grey background on hover */
+  }
+  
+
+app-footer {
+    margin-top: auto;
+}
+.profile-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: white; 
+  }
+  
+  .profile-icon {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid white; 
+  }
+  

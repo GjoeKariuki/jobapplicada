@@ -1,0 +1,3 @@
+add admin menu / navigation options
+admin page components
+admin page functionality

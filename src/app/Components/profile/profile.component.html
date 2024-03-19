@@ -1,0 +1,39 @@
+<article class="user-profile">
+    <section class="profile-header" >
+      <div class="profile-picture-wrapper">
+        <img src="https://secure.gravatar.com/avatar/b9a6a966ae54d4c1c74655210aa820f4?s=35&d=mm"  class="profile-picture">
+      </div>
+      <div class="user-info" *ngIf="user | async as users">
+        <h1 class="user-name">{{users.Name}}</h1>
+        <p class="user-title">Frontend Developer</p>
+      </div>
+    </section>
+    
+    <section class="contact-info" *ngIf="user | async as users">
+      <h2>Contact Information</h2>
+      <p><strong>Email:</strong> {{users.Email}}</p>
+      <p><strong>Phone:</strong> +123456789</p>
+      <p><strong>Location:</strong> New York, NY</p>
+    </section>
+    
+    <section class="skills">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <!-- Additional skills -->
+      </ul>
+    </section>
+    
+    <section class="bio" *ngIf="user | async as users">
+      <h2>About Me</h2>
+      <p>{{users.bio}}</p>
+    </section>
+    
+    <section class="resume"  *ngIf="user | async as users">
+      <h2>{{users.bio}}</h2>
+      <a href="path/to/resume.pdf" target="_blank" class="resume-link">Download My Resume</a>
+    </section>
+  </article>
+  

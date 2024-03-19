@@ -1,0 +1,33 @@
+<div class="job-posting-form-container">
+    <form (ngSubmit)="onsubmit()" class="job-posting-form" [formGroup]="postForm">
+        <h2>Create Job Posting</h2>
+
+        <label for="title">Job Title</label>
+        <input type="text" id="title" name="Title" formControlName="Title" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="Description" formControlName="Description" required></textarea>
+
+        <label for="location">Location</label>
+        <input type="text" id="location" name=" Location" formControlName="Location" required>
+
+        <label for="SalaryRange">Salary Range</label>
+        <input type="text" id="SalaryRange" name="SalaryRange" formControlName="SalaryRange" required>
+
+        <label for="Type">Type</label>
+        <select id="Type" name="type" formControlName="Type" required>
+            <option value="default">Full-Time</option>
+            <option value="Part-Time">Part-Time</option>
+            <option value="Contract">Contract</option>
+            <option value="Temporary">Temporary</option>
+        </select>
+
+        <label for="PostedDate">Posted Date</label>
+        <input type="date" id="PostedDate" name="PostedDate" formControlName="PostedDate" required>
+
+        <label for="ExpiryDate">Expiry Date</label>
+        <input type="date" id="ExpiryDate" name="ExpiryDate" formControlName="ExpiryDate" required>
+
+        <button type="submit" class="submit-btn" (click)="postJob()">Post Job</button>
+    </form>
+</div>

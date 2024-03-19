@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="sidebar">
+        <div class="filter-category">
+            <label for="category-select">Filter job by category</label>
+            <select name="category" id="category-select">
+                <option value="all">All</option>
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+                <option value="devops">Devops</option>
+            </select>
+        </div>
+        <div class="filter-location">
+            <p>Location</p>
+            <ul>
+                <li>Florida</li>
+                <li>California</li>
+                <li>New Jersey</li>
+                <li>Washington</li>
+            </ul>
+        </div>
+    </div>
+    <div class="job-listing">
+
+        <router-outlet></router-outlet>
+<div class="container">
+    <div class="job-listing" *ngIf="jobs | async as job">
+       
+        <div class="job" *ngFor="let jb of job" >
+            <h3>{{jb.Title}}</h3>
+            <p>{{jb.Location}}</p>
+            <p>{{jb.Description}}</p>
+            <button class="btn" (click)="viewJob(jb.JobID)" type="submit">More Details</button>
+    
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!jobs">
+    <p>No Jobs  Available!!!</p>
+</div>
+    </div>
+    <ng-template #noJobs>
+        No Jobs  Available!!!
+    </ng-template>
+    
+
+</div>
+
+
+
